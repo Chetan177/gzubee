@@ -30,9 +30,9 @@
 # 😃 Contributor 
 
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/Chetan177/rpsver/issues
+[issues-url]: https://github.com/Chetan177/gzubee/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/Chetan177/rpsver/blob/master/LICENSE.txt
+[license-url]: https://github.com/Chetan177/gzubee/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/chetan-pandey-19a008159/
 
