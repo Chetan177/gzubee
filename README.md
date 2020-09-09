@@ -9,11 +9,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/Chetan177/guzbee/">
-    <img src="logo/guzbee.png" alt="Logo" width="200" height="200">
+    <img src="logo/guzbee.png" alt="Logo" width="262" height="348">
   </a>
-
-  <h3 align="center">RPSVER</h3>
-
   <p align="center">
     Genesis on its way just hold your breath
     <br />
