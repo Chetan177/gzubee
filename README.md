@@ -8,8 +8,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Chetan177/guzbee/logo/guzbee.png">
-    <img src="images/icon.png" alt="Logo" width="200" height="200">
+  <a href="https://github.com/Chetan177/guzbee/">
+    <img src="logo/guzbee.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">RPSVER</h3>
