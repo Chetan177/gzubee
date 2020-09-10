@@ -39,8 +39,7 @@ server.addService(loginProto.LoginService.service, {
 			});
 		}
     },
-    signUp: (call, callback) =>{},
-    signIn: (call, callback) => {}
+    signUp: (call, callback) =>{}
 });
 
 server.bind("127.0.0.1:30043", grpc.ServerCredentials.createInsecure());
