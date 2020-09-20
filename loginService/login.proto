@@ -3,7 +3,6 @@ syntax = "proto3";
 service LoginService {
     rpc Login (LoginUser) returns (ReturnMessage) {}
     rpc SignIn (SignInUser) returns (ReturnMessage) {}
-    rpc SignUp (CreateUser) returns (ReturnMessage) {}
 }
 
 message Empty {}
