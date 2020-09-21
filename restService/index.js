@@ -1,21 +1,29 @@
+// Logger INIT 
+const logFile = "../log/guzbee.log";
+const errorLogFile = "../log/error.log"
 const winston = require("winston");
+const { loggers } = require('winston')
+
+loggers.add('guzbeeLogger', {
+  level: "info",
+  format: winston.format.json(),
+  defaultMeta: { service: "rest-service" },
+  transports: [
+    new winston.transports.File({ filename: errorLogFile, level: 'error' }),
+    new winston.transports.File({ filename: logFile })],
+});
+
+const logger = loggers.get('guzbeeLogger')
+
 
 // Modules
 const express = require("express");
 const bodyParser = require("body-parser");
 const customMiddleware = require("./middleware/errorHandler");
-// const logger = require("./middleware/log")
+
 
 // Config Constants
 const defualtRoute = "/v01/";
-const logFile = "../log/guzbee.log";
-
-// TODO Unified
-var logger = winston.createLogger({
-  format: winston.format.json(),
-  defaultMeta: { service: "rest-service" },
-  transports: [new winston.transports.File({ filename: logFile })],
-});
 
 // Variables
 var app = express();
@@ -38,12 +46,15 @@ app.use(customMiddleware.err500);
 
 // * Start * //
 const PORT = process.env.PORT || 3000;
+var paths = []
+
 app.listen(PORT, () => {
-  logger.info(`Server running at port ${PORT}`);
   console.log(`Server running at port ${PORT}`);
   app._router.stack.forEach(function (r) {
     if (r.route && r.route.path) {
-      console.log(r.route.path);
+      paths.push(r.route.path);
     }
   });
+
+  logger.info(`API paths loaded ${paths}`)
 });
