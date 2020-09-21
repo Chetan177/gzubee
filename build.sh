@@ -3,4 +3,4 @@
 cd restService
 npm install
 npm i nexe -g
-cat index.js | nexe
+cat index.js | nexe --build
