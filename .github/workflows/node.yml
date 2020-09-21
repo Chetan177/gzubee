@@ -8,7 +8,8 @@ jobs:
 
     steps:
       # Checkout code in the directory
-      - uses: actions/checkout@v2
+      - name: Checkout code in the directory
+        uses: actions/checkout@v2
       
       - name: Setup Node.js environment
         uses: actions/setup-node@v1.4.3
@@ -17,7 +18,7 @@ jobs:
             node-version: 12.18.3
         id: node
         
-      - name: Node Build
+      - name: Build
         run: |
           chmod +x build.sh
           ./build.sh
