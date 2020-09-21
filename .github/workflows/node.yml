@@ -1,0 +1,26 @@
+name: Node 
+on: [push]
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code in the directory
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v1.4.3
+        with:
+            # Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0
+            node-version: 12.18.3
+      - name: Set up enviroment
+        run: |
+            cd restService,
+            npm install
+            
+
+      - name: Node Build
+        run: |
+          node index.js
