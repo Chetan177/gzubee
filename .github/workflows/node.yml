@@ -18,10 +18,8 @@ jobs:
       - name: Set up enviroment
         run: |
             ls
-            cd ./restService,
-            npm install
             
-
+            
       - name: Node Build
         run: |
-          node index.js
+          ./build
