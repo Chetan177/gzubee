@@ -2,5 +2,6 @@
 
 cd restService
 npm install
-npm i nexe -g
-cat index.js | nexe --build
+npm ci
+npm run build --if-present
+#npm test
