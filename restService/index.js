@@ -23,7 +23,6 @@ var logger = winston.createLogger({
 var app = express();
 
 // Routes paths
-
 const token = require("./routes/token");
 const health = require("./routes/health")
 
@@ -34,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // * Routes * //
 app.get(defualtRoute+"health",health)
-app.get("/s/", token);
+app.post("/getAuthToken/", token.getToken);
 
 
 // Error handlers
