@@ -35,4 +35,4 @@ const Genres = {
   Card: 17,
 };
 
-module.exports = { Platforms: Platforms, Store: Store, Genres: Genres };
+module.exports = { Platforms: Platforms, Store: Store, Genres: Genres, URL: URL};
