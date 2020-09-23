@@ -1,3 +1,5 @@
+
+const URL = "https://api.rawg.io/api/" 
 const Platforms = {
   Xbox: 1,
   PlayStation4: 18,
