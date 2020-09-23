@@ -31,6 +31,7 @@ var app = express();
 // Routes paths
 const token = require("./routes/token");
 const health = require("./routes/health");
+const { Console } = require("winston/lib/winston/transports");
 
 // Middlewares
 app.use(bodyParser.json());
@@ -38,7 +39,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // * Routes * //
 app.get(defualtRoute + "health", health);
-app.post(defualtRoute + "getAuthToken/", token.getToken);
+app.post(defualtRoute + "getAuthToken", token.getToken);
+app.get(defualtRoute + "checkToken",token.authenticateToken,token.checkToken);
 
 // Error handlers
 app.use(customMiddleware.err404);
@@ -57,4 +59,5 @@ app.listen(PORT, () => {
   });
 
   logger.info(`API paths loaded ${paths}`)
+  console.info(paths)
 });

@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const { json } = require("express");
 const jwt = require("jsonwebtoken");
 const { loggers } = require('winston')
 
@@ -24,7 +25,7 @@ authenticateToken = function (req, res, next) {
   const token = authHeader && authHeader.split(' ')[1]
   if (token == null) return res.sendStatus(401) 
 
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+  jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
     logger.error(`Token verification error: ${err}`)
     if (err) return res.sendStatus(403)
     req.user = user
@@ -41,6 +42,14 @@ getToken = function (req, res) {
     token: token,
     user: user.username,
   });
-};
+}
 
-module.exports = {getToken: getToken, authenticateToken: authenticateToken}
+checkToken = function(req,res) {
+  return res.json({
+    msg: "Correct Token",
+    user: user.username,
+  });
+
+}
+
+module.exports = {getToken: getToken, authenticateToken: authenticateToken, checkToken: checkToken}
