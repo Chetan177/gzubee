@@ -1,8 +1,9 @@
-// Logger INIT 
+
 const logFile = "../log/guzbee.log";
 const errorLogFile = "../log/error.log"
 const winston = require("winston");
 const { loggers } = require('winston')
+
 
 loggers.add('guzbeeLogger', {
   level: "info",
@@ -22,6 +23,7 @@ const bodyParser = require("body-parser");
 const customMiddleware = require("./middleware/errorHandler");
 
 
+
 // Config Constants
 const defualtRoute = "/v01/";
 
@@ -31,7 +33,8 @@ var app = express();
 // Routes paths
 const token = require("./routes/token");
 const health = require("./routes/health");
-const { Console } = require("winston/lib/winston/transports");
+const api = require("./routes/api")
+
 
 // Middlewares
 app.use(bodyParser.json());
@@ -41,6 +44,9 @@ app.use(express.urlencoded({ extended: false }));
 app.get(defualtRoute + "health", health);
 app.post(defualtRoute + "getAuthToken", token.getToken);
 app.get(defualtRoute + "checkToken",token.authenticateToken,token.checkToken);
+
+app.post(defualtRoute + "search/game", token.authenticateToken, api.SearchGame );
+
 
 // Error handlers
 app.use(customMiddleware.err404);
