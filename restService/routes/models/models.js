@@ -5,7 +5,9 @@ const ModelSearchGame = joi.object({
 
   store: joi.string().alphanum().min(3).max(20),
 
-  platform: joi.string().alphanum().min(3).max(20),
+  platform: joi.string().alphanum().min(2).max(20),
+
+  genre: joi.string().alphanum().min(2).max(20)
 });
 
 
