@@ -14,7 +14,6 @@ function GetRequest(url) {
   var obj;
   request(url, function (error, response, body) {
     obj = JSON.parse(body);
-
     logger.error(`GET request error ${error}, ${response}`);
   });
   return obj;
